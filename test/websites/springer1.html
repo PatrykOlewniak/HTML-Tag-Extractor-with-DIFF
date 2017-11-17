@@ -1,0 +1,1215 @@
+<!DOCTYPE HTML>
+<html lang="en-gb" class="no-js">
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.5,user-scalable=yes">
+    <meta name="citation_publisher" content="3D Display Research Center"/>
+    <meta name="citation_title" content="Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator"/>
+    <meta name="citation_doi" content="10.1007/s13319-015-0074-3"/>
+    <meta name="citation_language" content="en"/>
+    <meta name="citation_abstract_html_url" content="https://link.springer.com/article/10.1007/s13319-015-0074-3"/>
+    <meta name="citation_fulltext_html_url" content="https://link.springer.com/article/10.1007/s13319-015-0074-3"/>
+    <meta name="citation_pdf_url" content="https://link.springer.com/content/pdf/10.1007%2Fs13319-015-0074-3.pdf"/>
+    <meta name="citation_springer_api_url" content="http://api.springer.com/metadata/pam?q&#x3D;doi:10.1007/s13319-015-0074-3&amp;api_key&#x3D;"/>
+    <meta name="citation_firstpage" content="42"/>
+    <meta name="citation_author" content="Zahra Toony"/>
+    <meta name="citation_author_institution" content="Université Laval"/>
+    <meta name="citation_author_email" content="zahra.toony.1@ulaval.ca"/>
+    <meta name="citation_author" content="Denis Laurendeau"/>
+    <meta name="citation_author_institution" content="Université Laval"/>
+    <meta name="citation_author" content="Christian Gagné"/>
+    <meta name="citation_author_institution" content="Université Laval"/>
+    <meta name="dc.identifier" content="10.1007/s13319-015-0074-3"/>
+    <meta name="format-detection" content="telephone&#x3D;no"/>
+    <meta name="meta:description" content="Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an a"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Describing 3D Geometric Primitives Using the Gaussian Sphere and the G"/>
+    <meta name="twitter:description" content="Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an a"/>
+    <meta name="twitter:image" content="https://static-content.springer.com/cover/journal/13319/6/4.jpg"/>
+    <meta name="twitter:image:alt" content="Content cover image"/>
+    <meta name="twitter:site" content="SpringerLink"/>
+    <meta name="citation_journal_title" content="3D Research"/>
+    <meta name="citation_journal_abbrev" content="3D Res"/>
+    <meta name="citation_volume" content="6"/>
+    <meta name="citation_issue" content="4"/>
+    <meta name="citation_issn" content="2092-6731"/>
+    <meta name="citation_online_date" content="2015/11/25"/>
+    <meta name="citation_cover_date" content="2015/12/01"/>
+    <meta name="citation_article_type" content="3DR Express"/>
+    <meta property="og:title" content="Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator"/>
+    <meta property="og:description" content="Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an a"/>
+    <meta property="og:type" content="Article"/>
+    <meta property="og:url" content="https://link.springer.com/article/10.1007/s13319-015-0074-3"/>
+    <meta property="og:image" content="https://link.springer.com/springerlink-static/25538376/images/png/SL-Square.png"/>
+    <meta property="og:site_name" content="SpringerLink"/>
+
+        <title>Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator | SpringerLink</title>
+        <link rel="canonical" href="https://link.springer.com/article/10.1007/s13319-015-0074-3"/>
+        <link rel="shortcut icon" href="/springerlink-static/25538376/images/favicon/favicon.ico" />
+<link rel="icon" sizes="16x16 32x32 48x48" href="/springerlink-static/25538376/images/favicon/favicon.ico">
+<link rel="icon" sizes="16x16" type="image/png" href="/springerlink-static/25538376/images/favicon/favicon-16x16.png">
+<link rel="icon" sizes="32x32" type="image/png" href="/springerlink-static/25538376/images/favicon/favicon-32x32.png">
+<link rel="icon" sizes="48x48" type="image/png" href="/springerlink-static/25538376/images/favicon/favicon-48x48.png">
+<link rel="apple-touch-icon" href="/springerlink-static/25538376/images/favicon/app-icon-iphone@3x.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/springerlink-static/25538376/images/favicon/ic_launcher_hdpi.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/springerlink-static/25538376/images/favicon/app-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/springerlink-static/25538376/images/favicon/app-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/springerlink-static/25538376/images/favicon/app-icon-iphone@2x.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/springerlink-static/25538376/images/favicon/ic_launcher_xxhdpi.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/springerlink-static/25538376/images/favicon/app-icon-ipad@2x.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/springerlink-static/25538376/images/favicon/app-icon-iphone@3x.png" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/springerlink-static/25538376/images/favicon/ic_launcher_xxhdpi.png">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//google-analytics.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//www.googletagservices.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//static-content.springer.com" />
+        <link rel="stylesheet" href="/springerlink-static/25538376/css/basic.css" media="screen">
+<link rel="stylesheet" href="/springerlink-static/25538376/css/styles.css" class="js-ctm" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+<link rel="stylesheet" href="/springerlink-static/25538376/css/print.css" media="print">
+
+
+            <script id="webtrekk-properties">
+    var webtrekkProperties = {
+          trackDomain : "springergmbh01.webtrekk.net",
+          trackId : "935649882378213",
+      };
+    </script>
+    <script type="text/javascript" async src="/springerlink-static/25538376/js/webtrekk_v4.min.js"></script>
+
+            <script>
+        var dataLayer = [{
+                'GA Key':'UA-26408784-1',
+                'Event Category':'Article',
+                'Open Access':'N',
+                'Labs':'Y',
+                'DOI':'10.1007\/s13319-015-0074-3',
+                'VG Wort Identifier':'pw-vgzm.415900-10.1007-s13319-015-0074-3',
+                'HasAccess':'N',
+                'Full HTML':'N',
+                'Has Body':'Y',
+                'Static Hash':'25538376',
+                'Has Preview':'N',
+                'user':{'license': {'businessPartnerID': [], 'businessPartnerIDString': ''}},
+                'content':{'type': 'article', 'category': {'pmc': {'primarySubject': 'Engineering', 'primarySubjectCode': 'T', 'secondarySubjects': {'1': 'Signal, Image and Speech Processing', '2': 'Computer Imaging, Vision, Pattern Recognition and Graphics', '3': 'Optics, Optoelectronics, Plasmonics and Optical Devices'}, 'secondarySubjectCodes': {'1': 'T24051', '2': 'I22005', '3': 'P31060'}}}},
+                'Access Type':'noaccess',
+                'Page':'article',
+                'Bpids':'',
+                'Bpnames':'',
+                'SubjectCodes':'SCT, SCT24051, SCI22005, SCP31060',
+                'Keywords':'Shape description, Principal primitives, Gaussian sphere, Gaussian accumulator',
+                'Webtrekk parent prefix':'journal',
+                'Webtrekk leaf prefix':'article',
+                'Webtrekk toc prefix':'journal',
+                'Country':'PL',
+                'Journal Id':'13319',
+                'Journal Title':'3D Research',
+        }];
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?cache-busting=' + new Date().getTime() + '&id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCF9Z9');</script>
+
+    </head>
+    <body>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WCF9Z9"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav class="skip-to">
+    <a class="skip-to__link skip-to__link--article" href="#main-content" title="Skip directly to the main content">Skip to main content</a>
+</nav>
+        <div class="page-wrapper">
+            <noscript>
+    <div class="nojs-banner u-interface">
+        <p>This service is more advanced with JavaScript available, learn more at <a
+                href="http://activatejavascript.org" target="_blank" rel="noopener noreferrer">http://activatejavascript.org</a>
+        </p>
+    </div>
+</noscript>
+                    <div id="leaderboard" class="leaderboard u-hide" data-component="SpringerLink.GoogleAds" data-namespace="leaderboard"></div>
+
+                <header id="header" class="header u-interface" role="banner">
+        <div class="header__content">
+            <div class="header__menu-container">
+                    <a id="logo" class="site-logo" href="/" title="Go to homepage">
+            <span class="u-screenreader-only">SpringerLink</span>
+            <svg class="site-logo__springer" width="148" height="30" role="img" aria-label="SpringerLink Logo">
+                <image width="148" height="30" alt="SpringerLink Logo" src="/springerlink-static/25538376/images/png/springerlink.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/springerlink-static/25538376/images/svg/springerlink.svg"></image>
+            </svg>
+    </a>
+
+
+                    <nav id="search-container" class="u-inline-block">
+                        <div class="search">
+                            <div class="search__content">
+                                <form class="u-form-single-input" action="/search" method="get" role="search">
+    <input aria-label="Search" name="query" type="text" autocomplete="off" value="" placeholder="Search">
+    <input class="u-hide-text" type="submit" value="Submit" title="Submit">
+    <svg class="u-vertical-align-absolute" width="13" height="13" viewBox="222 151 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"/>
+    </svg>
+</form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="nav-container u-interface">
+    <div class="global-nav__wrapper">
+        <div class="search-button">
+            <a class="search-button__label" href="#search-container">
+                <span class="search-button__title">Search</span><svg width="12" height="12" viewBox="222 151 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+
+        <ul class="global-nav" data-component="SpringerLink.Menu" data-title="Navigation menu" data-text="Menu">
+            <li>
+                <a href="/">
+                    <span class="u-overflow-ellipsis">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/contactus">
+                    <span class="u-overflow-ellipsis">Contact Us</span>
+                </a>
+            </li>
+
+                <li class="global-nav__logged-out">
+                    <a class="test-login-link" href="//link.springer.com/signup-login?previousUrl=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3">
+                        <span class="u-overflow-ellipsis">Log in</span>
+                    </a>
+                </li>
+
+        </ul>
+    </div>
+</nav>
+            </div>
+
+        </div>
+    </header>
+
+
+
+
+            <main id="main-content">
+                <article class="main-wrapper">
+                    <div class="main-container uptodate-recommendations-off">
+                        <aside class="main-sidebar-left">
+                            <div class="main-sidebar-left__content">
+                                <div class="test-cover cover-image" itemscope>
+        <a class="test-cover-link" href="/journal/13319" title="3D Research">
+            <img class="test-cover-image" src="https://static-content.springer.com/cover/journal/13319/6/4.jpg" alt="3D Research" itemprop="image"/>
+        </a>
+
+</div>
+                            </div>
+                        </aside>
+
+                        <div class="main-body" data-role="NavigationContainer">
+                            <div class="main-body__content">
+
+
+
+                                <div xmlns="http://www.w3.org/1999/xhtml" class="FulltextWrapper"><div class="ArticleHeader main-context"><div id="enumeration" class="enumeration"><p><a href="/journal/13319" title="3D Research"><span class="JournalTitle">3D Research</span></a></p><p class="icon--meta-keyline-before"><span class="ArticleCitation_Year"><time datetime="2015-12">December 2015</time>, </span><span class="ArticleCitation_Volume">6:42</span></p></div><div class="MainTitleSection"><h1 class="ArticleTitle" lang="en">Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator</h1></div><div class="authors u-clearfix" data-component="SpringerLink.Authors"><ul class="u-interface u-inline-list authors__title" data-role="AuthorsNavigation"><li><span>Authors</span></li><li><a href="#authorsandaffiliations" class="gtm-tab-authorsandaffiliations">Authors and affiliations</a></li></ul><div class="authors__list" data-role="AuthorsList"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Zahra Toony</span><span class="author-information"><span class="authors__contact"><a href="mailto:zahra.toony.1@ulaval.ca" title="zahra.toony.1@ulaval.ca" itemprop="email" class="gtm-email-author">Email author</a></span></span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Denis Laurendeau</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Christian Gagné</span></li></ul></div></div><div class="main-context__container" data-component="SpringerLink.ArticleMetrics"><div class="main-context__column"><span><span class="test-render-category">3DR Express</span></span><div class="article-dates" data-component="SpringerLink.ArticleDates"><dl><dt>First Online: </dt><dd class="article-dates__first-online"><time datetime="2015-11-25">25 November 2015</time></dd></dl><dl class="article-dates__history"><dt>Received: </dt><dd><time datetime="2015-09-04">04 September 2015</time></dd><dt>Revised: </dt><dd><time datetime="2015-11-04">04 November 2015</time></dd><dt>Accepted: </dt><dd><time datetime="2015-11-04">04 November 2015</time></dd></dl></div></div>    <div class="main-context__column">
+        <ul id="book-metrics" class="article-metrics">
+                <li class="article-metrics__item">
+                         <span class="article-metrics__views">114</span>
+                         <span class="article-metrics__label">Downloads</span>
+                </li>
+        </ul>
+    </div>
+</div></div><section class="Abstract" id="Abs1" tabindex="-1" lang="en"><h2 class="Heading">Abstract</h2><p id="Par1" class="Para">Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an algorithm can segment a complex model into its primitives, a description technique is still needed in order to identify the type of each primitive. Most feature extraction methods fail to describe these basic primitives or need a trained classifier on a database of prepared data to perform this identification. In this paper, we propose a method that can describe basic primitives such as planes, cones, cylinders, spheres, and tori as well as partial models of the latter four primitives. To achieve this task, we combine the concept of Gaussian sphere to a new concept introduced in this paper: the Gaussian accumulator. Comparison of the results of our method with other feature extractors reveals that our approach can distinguish all of these primitives from each other including partial models. Our method was also tested on real scanned data with noise and missing areas. The results show that our method is able to distinguish all of these models as well.</p></section><div class="KeywordGroup" lang="en"><h3 class="Heading">Keywords</h3><span class="Keyword">Shape description </span><span class="Keyword">Principal primitives </span><span class="Keyword">Gaussian sphere </span><span class="Keyword">Gaussian accumulator </span></div><div class="article-actions--inline" id="article-actions--inline" data-component="article-actions--inline"></div><section class="Section1 RenderAsSection1" id="Bib1" tabindex="-1"><h3 class="Heading">References</h3><div class="content"><ol class="BibliographyWrapper"><li class="Citation"><div class="CitationNumber">1.</div><div class="CitationContent" id="CR1">Baareh, A. K., Sheta, A. F., &amp; Al-Batah, M. S. (2012). Feature based 3D object recognition using artificial neural networks. <em class="EmphasisTypeItalic ">International Journal of Computer Applications</em>, <em class="EmphasisTypeItalic ">44</em>, 1–7.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Feature%20based%203D%20object%20recognition%20using%20artificial%20neural%20networks&amp;author=AK.%20Baareh&amp;author=AF.%20Sheta&amp;author=MS.%20Al-Batah&amp;journal=International%20Journal%20of%20Computer%20Applications&amp;volume=44&amp;pages=1-7&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">2.</div><div class="CitationContent" id="CR2">Bay, H., Tuytelaars, T., &amp; Van Gool, L.: Surf: Speeded up robust features. In <em class="EmphasisTypeItalic ">9th European conference on computer vision (ECCV)</em> (pp. 404–417). Springer, Berlin (2006)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Bay%2C%20H.%2C%20Tuytelaars%2C%20T.%2C%20%26%20Van%C2%A0Gool%2C%20L.%3A%20Surf%3A%20Speeded%20up%20robust%20features.%20In%209th%20European%20conference%20on%20computer%20vision%20%28ECCV%29%20%28pp.%20404%E2%80%93417%29.%20Springer%2C%20Berlin%20%282006%29"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">3.</div><div class="CitationContent" id="CR3">Bentley, J. L. (1975). Multidimensional binary search trees used for associative searching. <em class="EmphasisTypeItalic ">Communications of the ACM</em>, <em class="EmphasisTypeItalic ">18</em>(9), 509–517.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/361002.361007"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a class="gtm-reference" data-reference-type="MathSciNet" target="_blank" rel="noopener noreferrer" href="http://www.ams.org/mathscinet-getitem?mr=904133"><span><span>MathSciNet</span></span></a></span><span class="Occurrence OccurrenceZLBID"><a class="gtm-reference" data-reference-type="MATH" target="_blank" rel="noopener noreferrer" href="http://www.emis.de/MATH-item?0306.68061"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Multidimensional%20binary%20search%20trees%20used%20for%20associative%20searching&amp;author=JL.%20Bentley&amp;journal=Communications%20of%20the%20ACM&amp;volume=18&amp;issue=9&amp;pages=509-517&amp;publication_year=1975"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">4.</div><div class="CitationContent" id="CR4">Besl, P. J., &amp; McKay, N. D. (1992). Method for registration of 3-D shapes. Robotics-DL tentative (pp. 586–606).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Besl%2C%20P.%20J.%2C%20%26%20McKay%2C%20N.%20D.%20%281992%29.%20Method%20for%20registration%20of%203-D%20shapes.%20Robotics-DL%20tentative%20%28pp.%20586%E2%80%93606%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">5.</div><div class="CitationContent" id="CR5">Bronstein, A. M., Bronstein, M. M., Guibas, L. J., &amp; Ovsjanikov, M. (2011). Shape google: Geometric words and expressions for invariant shape retrieval. <em class="EmphasisTypeItalic ">ACM Transactions on Graphics (TOG)</em>, <em class="EmphasisTypeItalic ">30</em>(1), 1.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/1899404.1899405"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Shape%20google%3A%20Geometric%20words%20and%20expressions%20for%20invariant%20shape%20retrieval&amp;author=AM.%20Bronstein&amp;author=MM.%20Bronstein&amp;author=LJ.%20Guibas&amp;author=M.%20Ovsjanikov&amp;journal=ACM%20Transactions%20on%20Graphics%20%28TOG%29&amp;volume=30&amp;issue=1&amp;pages=1&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">6.</div><div class="CitationContent" id="CR6">Castellani, U., Cristani, M., Fantoni, S., &amp; Murino, V. (2008). Sparse points matching by combining 3d mesh saliency with statistical descriptors. <em class="EmphasisTypeItalic ">Computer Graphics Forum</em>, <em class="EmphasisTypeItalic ">27</em>(2), 643–652.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1111/j.1467-8659.2008.01162.x"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Sparse%20points%20matching%20by%20combining%203d%20mesh%20saliency%20with%20statistical%20descriptors&amp;author=U.%20Castellani&amp;author=M.%20Cristani&amp;author=S.%20Fantoni&amp;author=V.%20Murino&amp;journal=Computer%20Graphics%20Forum&amp;volume=27&amp;issue=2&amp;pages=643-652&amp;publication_year=2008"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">7.</div><div class="CitationContent" id="CR7">Darom, T., &amp; Keller, Y. (2012). Scale-invariant features for 3-d mesh models. <em class="EmphasisTypeItalic ">IEEE Transactions on Image Processing</em>, <em class="EmphasisTypeItalic ">21</em>(5), 2758–2769.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1109/TIP.2012.2183142"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a class="gtm-reference" data-reference-type="MathSciNet" target="_blank" rel="noopener noreferrer" href="http://www.ams.org/mathscinet-getitem?mr=2952137"><span><span>MathSciNet</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Scale-invariant%20features%20for%203-d%20mesh%20models&amp;author=T.%20Darom&amp;author=Y.%20Keller&amp;journal=IEEE%20Transactions%20on%20Image%20Processing&amp;volume=21&amp;issue=5&amp;pages=2758-2769&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">8.</div><div class="CitationContent" id="CR8">Dubrovina, A., &amp; Kimmel, R. (2010). Matching shapes by eigendecomposition of the Laplace-Beltrami operator. In <em class="EmphasisTypeItalic ">Proceedings of 3D data processing, visualization and transmission (3DPVT)</em> (vol. 2, no. 3).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Dubrovina%2C%20A.%2C%20%26%20Kimmel%2C%20R.%20%282010%29.%20Matching%20shapes%20by%20eigendecomposition%20of%20the%20Laplace-Beltrami%20operator.%20In%20Proceedings%20of%203D%20data%20processing%2C%20visualization%20and%20transmission%20%283DPVT%29%20%28vol.%202%2C%20no.%203%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">9.</div><div class="CitationContent" id="CR9">Fehr, F., Streicher, A., &amp; Burkhardt, H. (2009). A bag of features approach for 3D shape retrieval. <em class="EmphasisTypeItalic ">Advances in visual computing</em> (pp. 34–43). Berlin: Springer.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/978-3-642-10331-5_4"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20bag%20of%20features%20approach%20for%203D%20shape%20retrieval&amp;author=F.%20Fehr&amp;author=A.%20Streicher&amp;author=H.%20Burkhardt&amp;pages=34-43&amp;publication_year=2009"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">10.</div><div class="CitationContent" id="CR10">Flitton, G. T., Breckon, T. P., &amp; Bouallagu, N. M. (2010). Object recognition using 3D SIFT in complex CT volumes. In <em class="EmphasisTypeItalic ">Proceedings of the British Machine Vision Conference (BMVC)</em> (pp. 1–12).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Flitton%2C%20G.%20T.%2C%20Breckon%2C%20T.%20P.%2C%20%26%20Bouallagu%2C%20N.%20M.%20%282010%29.%20Object%20recognition%20using%203D%20SIFT%20in%20complex%20CT%20volumes.%20In%20Proceedings%20of%20the%20British%20Machine%20Vision%20Conference%20%28BMVC%29%20%28pp.%201%E2%80%9312%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">11.</div><div class="CitationContent" id="CR11">Furuya, T., &amp; Ohbuchi, R. (2009). Dense sampling and fast encoding for 3D model retrieval using bag-of-visual features. In <em class="EmphasisTypeItalic ">Proceedings of the ACM international confernce on image and video retrieval</em> (p. 26).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Furuya%2C%20T.%2C%20%26%20Ohbuchi%2C%20R.%20%282009%29.%20Dense%20sampling%20and%20fast%20encoding%20for%203D%20model%20retrieval%20using%20bag-of-visual%20features.%20In%20Proceedings%20of%20the%20ACM%20international%20confernce%20on%20image%20and%20video%20retrieval%20%28p.%2026%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">12.</div><div class="CitationContent" id="CR12">Gebal, K., Bærentzen, J. A., Aanæs, H., &amp; Larsen, R. (2009). Shape analysis using the auto diffusion function. <em class="EmphasisTypeItalic ">Computer Graphics Forum</em>, <em class="EmphasisTypeItalic ">28</em>(5), 1405–1413.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1111/j.1467-8659.2009.01517.x"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Shape%20analysis%20using%20the%20auto%20diffusion%20function&amp;author=K.%20Gebal&amp;author=JA.%20B%C3%A6rentzen&amp;author=H.%20Aan%C3%A6s&amp;author=R.%20Larsen&amp;journal=Computer%20Graphics%20Forum&amp;volume=28&amp;issue=5&amp;pages=1405-1413&amp;publication_year=2009"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">13.</div><div class="CitationContent" id="CR13">Guo, Y., Bennamoun, M., Sohel, F., Lu, M., &amp; Wan, J. (2014). 3d object recognition in cluttered scenes with local surface features: A survey. <em class="EmphasisTypeItalic ">IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, <em class="EmphasisTypeItalic ">36</em>(11), 2270–2287.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1109/TPAMI.2014.2316828"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=3d%20object%20recognition%20in%20cluttered%20scenes%20with%20local%20surface%20features%3A%20A%20survey&amp;author=Y.%20Guo&amp;author=M.%20Bennamoun&amp;author=F.%20Sohel&amp;author=M.%20Lu&amp;author=J.%20Wan&amp;journal=IEEE%20Transactions%20on%20Pattern%20Analysis%20and%20Machine%20Intelligence&amp;volume=36&amp;issue=11&amp;pages=2270-2287&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">14.</div><div class="CitationContent" id="CR14">Guo, Y., Bennamoun, M., Sohel, F., Lu, M., Wan, J., &amp; Kwok, N. M. (2015). A comprehensive performance evaluation of 3d local feature descriptors. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em> 1–24.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Guo%2C%20Y.%2C%20Bennamoun%2C%20M.%2C%20Sohel%2C%20F.%2C%20Lu%2C%20M.%2C%20Wan%2C%20J.%2C%20%26%20Kwok%2C%20N.%20M.%20%282015%29.%20A%20comprehensive%20performance%20evaluation%20of%203d%20local%20feature%20descriptors.%20International%20Journal%20of%20Computer%20Vision%201%E2%80%9324."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">15.</div><div class="CitationContent" id="CR15">Guo, Y., Sohel, F., Bennamoun, M., Lu, M., &amp; Wan, J. (2013). Rotational projection statistics for 3d local surface description and object recognition. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">105</em>(1), 63–86.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s11263-013-0627-y"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a class="gtm-reference" data-reference-type="MathSciNet" target="_blank" rel="noopener noreferrer" href="http://www.ams.org/mathscinet-getitem?mr=3089529"><span><span>MathSciNet</span></span></a></span><span class="Occurrence OccurrenceZLBID"><a class="gtm-reference" data-reference-type="MATH" target="_blank" rel="noopener noreferrer" href="http://www.emis.de/MATH-item?1286.68387"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Rotational%20projection%20statistics%20for%203d%20local%20surface%20description%20and%20object%20recognition&amp;author=Y.%20Guo&amp;author=F.%20Sohel&amp;author=M.%20Bennamoun&amp;author=M.%20Lu&amp;author=J.%20Wan&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=105&amp;issue=1&amp;pages=63-86&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">16.</div><div class="CitationContent" id="CR16">Harris, C., &amp; Stephens, M. (1988). A combined corner and edge detector. <em class="EmphasisTypeItalic ">Alvey Vision Conference</em>, <em class="EmphasisTypeItalic ">15</em>, 50.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20combined%20corner%20and%20edge%20detector&amp;author=C.%20Harris&amp;author=M.%20Stephens&amp;journal=Alvey%20Vision%20Conference&amp;volume=15&amp;pages=50&amp;publication_year=1988"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">17.</div><div class="CitationContent" id="CR17">Hetzel, G., Leibe, B., Levi, P., &amp; Schiele, B. (2001). 3d object recognition from range images using local feature histograms. In <em class="EmphasisTypeItalic ">Procedings of IEEE computer society conference on computer vision and pattern recognition (CVPR)</em> (vol. 2, pp. II–394).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Hetzel%2C%20G.%2C%20Leibe%2C%20B.%2C%20Levi%2C%20P.%2C%20%26%20Schiele%2C%20B.%20%282001%29.%203d%20object%20recognition%20from%20range%20images%20using%20local%20feature%20histograms.%20In%20Procedings%20of%20IEEE%20computer%20society%20conference%20on%20computer%20vision%20and%20pattern%20recognition%20%28CVPR%29%20%28vol.%202%2C%20pp.%20II%E2%80%93394%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">18.</div><div class="CitationContent" id="CR18">Hoppe, H. (1996). Progressive meshes. In <em class="EmphasisTypeItalic ">Proceedings of the 23rd annual conference on computer graphics and interactive techniques</em> (pp. 99–108).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Hoppe%2C%20H.%20%281996%29.%20Progressive%20meshes.%20In%20Proceedings%20of%20the%2023rd%20annual%20conference%20on%20computer%20graphics%20and%20interactive%20techniques%20%28pp.%2099%E2%80%93108%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">19.</div><div class="CitationContent" id="CR19">Johnson, A. E. (1997). Spin-images: A representation for 3-D surface matching. Ph.D. Thesis, Citeseer.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Johnson%2C%20A.%20E.%20%281997%29.%20Spin-images%3A%20A%20representation%20for%203-D%20surface%20matching.%20Ph.D.%20Thesis%2C%20Citeseer."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">20.</div><div class="CitationContent" id="CR20">Johnson, A. E., &amp; Hebert, M. (1999). Using spin images for efficient object recognition in cluttered 3d scenes. <em class="EmphasisTypeItalic ">IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, <em class="EmphasisTypeItalic ">21</em>(5), 433–449.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1109/34.765655"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Using%20spin%20images%20for%20efficient%20object%20recognition%20in%20cluttered%203d%20scenes&amp;author=AE.%20Johnson&amp;author=M.%20Hebert&amp;journal=IEEE%20Transactions%20on%20Pattern%20Analysis%20and%20Machine%20Intelligence&amp;volume=21&amp;issue=5&amp;pages=433-449&amp;publication_year=1999"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">21.</div><div class="CitationContent" id="CR21">Kazhdan, M., Funkhouser, T., &amp; Rusinkiewicz, S. (2003). Rotation invariant spherical harmonic representation of 3D shape descriptors. In <em class="EmphasisTypeItalic ">Proceedings of Eurographics/ACM SIGGRAPH symposium on geometry processing</em> (pp. 156–164).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Kazhdan%2C%20M.%2C%20Funkhouser%2C%20T.%2C%20%26%20Rusinkiewicz%2C%20S.%20%282003%29.%20Rotation%20invariant%20spherical%20harmonic%20representation%20of%203D%20shape%20descriptors.%20In%20Proceedings%20of%20Eurographics%2FACM%20SIGGRAPH%20symposium%20on%20geometry%20processing%20%28pp.%20156%E2%80%93164%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">22.</div><div class="CitationContent" id="CR22">Kin-Chung Au, O., Tai, C. L., Cohen-Or, D., Zheng, Y., &amp; Fu, H. (2010). Electors voting for fast automatic shape correspondence. <em class="EmphasisTypeItalic ">Computer Graphics Forum</em>, <em class="EmphasisTypeItalic ">29</em>(2), 645–654.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1111/j.1467-8659.2009.01634.x"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Electors%20voting%20for%20fast%20automatic%20shape%20correspondence&amp;author=O.%20Kin-Chung%20Au&amp;author=CL.%20Tai&amp;author=D.%20Cohen-Or&amp;author=Y.%20Zheng&amp;author=H.%20Fu&amp;journal=Computer%20Graphics%20Forum&amp;volume=29&amp;issue=2&amp;pages=645-654&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">23.</div><div class="CitationContent" id="CR23">Knopp, J., Prasad, M., &amp; Van Gool, L. (2010). Orientation invariant 3D object classification using hough transform based methods. In <em class="EmphasisTypeItalic ">Proceedings of the ACM workshop on 3D object retrieval</em> (pp. 15–20).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Knopp%2C%20J.%2C%20Prasad%2C%20M.%2C%20%26%20Van%C2%A0Gool%2C%20L.%20%282010%29.%20Orientation%20invariant%203D%20object%20classification%20using%20hough%20transform%20based%20methods.%20In%20Proceedings%20of%20the%20ACM%20workshop%20on%203D%20object%20retrieval%20%28pp.%2015%E2%80%9320%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">24.</div><div class="CitationContent" id="CR24">Knopp, J., Prasad, M., Willems, G., Timofte, R., &amp; Van Gool, L. (2010). Hough transform and 3D SURF for robust three dimensional classification. In <em class="EmphasisTypeItalic ">11th European conference on computer vision (ECCV)</em> (pp. 589–602). Springer, Berlin.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Knopp%2C%20J.%2C%20Prasad%2C%20M.%2C%20Willems%2C%20G.%2C%20Timofte%2C%20R.%2C%20%26%20Van%C2%A0Gool%2C%20L.%20%282010%29.%20Hough%20transform%20and%203D%20SURF%20for%20robust%20three%20dimensional%20classification.%20In%2011th%20European%20conference%20on%20computer%20vision%20%28ECCV%29%20%28pp.%20589%E2%80%93602%29.%20Springer%2C%20Berlin."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">25.</div><div class="CitationContent" id="CR25">Litman, R., Bronstein, A. M., &amp; Bronstein, M. M. (2011). Diffusion-geometric maximally stable component detection in deformable shapes. <em class="EmphasisTypeItalic ">Computers &amp; Graphics</em>, <em class="EmphasisTypeItalic ">35</em>(3), 549–560.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.cag.2011.03.011"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Diffusion-geometric%20maximally%20stable%20component%20detection%20in%20deformable%20shapes&amp;author=R.%20Litman&amp;author=AM.%20Bronstein&amp;author=MM.%20Bronstein&amp;journal=Computers%20%26%20Graphics&amp;volume=35&amp;issue=3&amp;pages=549-560&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">26.</div><div class="CitationContent" id="CR26">Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">60</em>(2), 91–110.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1023/B%3AVISI.0000029664.99615.94"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Distinctive%20image%20features%20from%20scale-invariant%20keypoints&amp;author=DG.%20Lowe&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=60&amp;issue=2&amp;pages=91-110&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">27.</div><div class="CitationContent" id="CR27">Maes, C., Fabry, T., Keustermans, J., Smeets, D., Suetens, P., &amp; Vandermeulen, D. (2010). Feature detection on 3D face surfaces for pose normalisation and recognition. In <em class="EmphasisTypeItalic ">4th IEEE international conference on biometrics: theory applications and systems (BTAS)</em> (pp. 1–6).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Maes%2C%20C.%2C%20Fabry%2C%20T.%2C%20Keustermans%2C%20J.%2C%20Smeets%2C%20D.%2C%20Suetens%2C%20P.%2C%20%26%20Vandermeulen%2C%20D.%20%282010%29.%20Feature%20detection%20on%203D%20face%20surfaces%20for%20pose%20normalisation%20and%20recognition.%20In%204th%20IEEE%20international%20conference%20on%20biometrics%3A%20theory%20applications%20and%20systems%20%28BTAS%29%20%28pp.%201%E2%80%936%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">28.</div><div class="CitationContent" id="CR28">Mansfield, M., &amp; O’Sullivan, C. (2012). <em class="EmphasisTypeItalic ">Understanding physics</em>. London: Wiley.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Understanding%20physics&amp;author=M.%20Mansfield&amp;author=C.%20O%E2%80%99Sullivan&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">29.</div><div class="CitationContent" id="CR29">Mian, A., Bennamoun, M., &amp; Owens, R. (2010). On the repeatability and quality of keypoints for local feature-based 3d object retrieval from cluttered scenes. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">89</em>(2–3), 348–361.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s11263-009-0296-z"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=On%20the%20repeatability%20and%20quality%20of%20keypoints%20for%20local%20feature-based%203d%20object%20retrieval%20from%20cluttered%20scenes&amp;author=A.%20Mian&amp;author=M.%20Bennamoun&amp;author=R.%20Owens&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=89&amp;issue=2%E2%80%933&amp;pages=348-361&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">30.</div><div class="CitationContent" id="CR30">Mohamad, M. (2013). 3D object recognition using local shape descriptors. Technical Report No. 2013-614.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Mohamad%2C%20M.%20%282013%29.%203D%20object%20recognition%20using%20local%20shape%20descriptors.%20Technical%20Report%20No.%202013-614."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">31.</div><div class="CitationContent" id="CR31">Murase, H., &amp; Nayar, S. K. (1995). Visual learning and recognition of 3-D objects from appearance. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">14</em>(1), 5–24.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/BF01421486"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Visual%20learning%20and%20recognition%20of%203-D%20objects%20from%20appearance&amp;author=H.%20Murase&amp;author=SK.%20Nayar&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=14&amp;issue=1&amp;pages=5-24&amp;publication_year=1995"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">32.</div><div class="CitationContent" id="CR32">Ohbuchi, R., Osada, K., Furuya, T., &amp; Banno, T. (2008). Salient local visual features for shape-based 3D model retrieval. In <em class="EmphasisTypeItalic ">IEEE International Conference on Shape Modeling and Applications</em> (pp. 93–102).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Ohbuchi%2C%20R.%2C%20Osada%2C%20K.%2C%20Furuya%2C%20T.%2C%20%26%20Banno%2C%20T.%20%282008%29.%20Salient%20local%20visual%20features%20for%20shape-based%203D%20model%20retrieval.%20In%20IEEE%20International%20Conference%20on%20Shape%20Modeling%20and%20Applications%20%28pp.%2093%E2%80%93102%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">33.</div><div class="CitationContent" id="CR33">Osada, R., Funkhouser, T., Chazelle, B., &amp; Dobkin, D. (2002). Shape distributions. <em class="EmphasisTypeItalic ">ACM Transactions on Graphics (TOG)</em>, <em class="EmphasisTypeItalic ">21</em>(4), 807–832.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/571647.571648"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Shape%20distributions&amp;author=R.%20Osada&amp;author=T.%20Funkhouser&amp;author=B.%20Chazelle&amp;author=D.%20Dobkin&amp;journal=ACM%20Transactions%20on%20Graphics%20%28TOG%29&amp;volume=21&amp;issue=4&amp;pages=807-832&amp;publication_year=2002"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">34.</div><div class="CitationContent" id="CR34">Paquet, E., Rioux, M., Murching, A., Naveen, T., &amp; Tabatabai, A. (2000). Description of shape information for 2-D and 3-D objects. <em class="EmphasisTypeItalic ">Signal Processing: Image Communication</em>, <em class="EmphasisTypeItalic ">16</em>(1), 103–122.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Description%20of%20shape%20information%20for%202-D%20and%203-D%20objects&amp;author=E.%20Paquet&amp;author=M.%20Rioux&amp;author=A.%20Murching&amp;author=T.%20Naveen&amp;author=A.%20Tabatabai&amp;journal=Signal%20Processing%3A%20Image%20Communication&amp;volume=16&amp;issue=1&amp;pages=103-122&amp;publication_year=2000"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">35.</div><div class="CitationContent" id="CR35">Peyré, G. (2004) Toolbox Graph. <span class="ExternalRef"><a target="_blank" rel="noopener noreferrer" href="http://www.mathworks.com/matlabcentral/fileexchange/5355-toolbox-graph/"><span class="RefSource">http://www.mathworks.com/matlabcentral/fileexchange/5355-toolbox-graph/</span></a></span>. Accessed June-2004.<span class="Occurrences"></span></div></li><li class="Citation"><div class="CitationNumber">36.</div><div class="CitationContent" id="CR36">Rabbani, T., &amp; Van Den Heuvel, F. (2005). Efficient Hough transform for automatic detection of cylinders in point clouds. In <em class="EmphasisTypeItalic ">Proceedings of ISPRS workshop on laser scanning</em> (vol. 3, pp. 60–65).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Rabbani%2C%20T.%2C%20%26%20Van%20Den%20Heuvel%2C%20F.%20%282005%29.%20Efficient%20Hough%20transform%20for%20automatic%20detection%20of%20cylinders%20in%20point%20clouds.%20In%20Proceedings%20of%20ISPRS%20workshop%20on%20laser%20scanning%20%28vol.%203%2C%20pp.%2060%E2%80%9365%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">37.</div><div class="CitationContent" id="CR37">Ruggeri, M. R., Patanè, G., Spagnuolo, M., &amp; Saupe, D. (2010). Spectral-driven isometry-invariant matching of 3d shapes. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">89</em>(2–3), 248–265.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s11263-009-0250-0"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Spectral-driven%20isometry-invariant%20matching%20of%203d%20shapes&amp;author=MR.%20Ruggeri&amp;author=G.%20Patan%C3%A8&amp;author=M.%20Spagnuolo&amp;author=D.%20Saupe&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=89&amp;issue=2%E2%80%933&amp;pages=248-265&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">38.</div><div class="CitationContent" id="CR38">Scovanner, P., Ali, S., &amp; Shah, M. (2007). A 3-dimensional sift descriptor and its application to action recognition. In <em class="EmphasisTypeItalic ">Proceedings of the 15th International Conference on Multimedia</em> (pp. 357–360).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Scovanner%2C%20P.%2C%20Ali%2C%20S.%2C%20%26%20Shah%2C%20M.%20%282007%29.%20A%203-dimensional%20sift%20descriptor%20and%20its%20application%20to%20action%20recognition.%20In%20Proceedings%20of%20the%2015th%20International%20Conference%20on%20Multimedia%20%28pp.%20357%E2%80%93360%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">39.</div><div class="CitationContent" id="CR39">Selinger, A., &amp; Nelson, R. C. (1999). A perceptual grouping hierarchy for appearance-based 3d object recognition. <em class="EmphasisTypeItalic ">Computer Vision and Image Understanding</em>, <em class="EmphasisTypeItalic ">76</em>(1), 83–92.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1006/cviu.1999.0788"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20perceptual%20grouping%20hierarchy%20for%20appearance-based%203d%20object%20recognition&amp;author=A.%20Selinger&amp;author=RC.%20Nelson&amp;journal=Computer%20Vision%20and%20Image%20Understanding&amp;volume=76&amp;issue=1&amp;pages=83-92&amp;publication_year=1999"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">40.</div><div class="CitationContent" id="CR40">Semechko, A. (2012). Particle sample sphere code for uniform tessellation of a unit sphere:. <span class="ExternalRef"><a target="_blank" rel="noopener noreferrer" href="http://www.mathworks.com/matlabcentral/fileexchange/37004-uniform-sampling-of-a-sphere"><span class="RefSource">http://www.mathworks.com/matlabcentral/fileexchange/37004-uniform-sampling-of-a-sphere</span></a></span>. Accessed June-2012.<span class="Occurrences"></span></div></li><li class="Citation"><div class="CitationNumber">41.</div><div class="CitationContent" id="CR41">Shang, L., &amp; Greenspan, M. (2010). Real-time object recognition in sparse range images using error surface embedding. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">89</em>(2–3), 211–228.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s11263-009-0276-3"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Real-time%20object%20recognition%20in%20sparse%20range%20images%20using%20error%20surface%20embedding&amp;author=L.%20Shang&amp;author=M.%20Greenspan&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=89&amp;issue=2%E2%80%933&amp;pages=211-228&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">42.</div><div class="CitationContent" id="CR42">Sipiran, I., &amp; Bustos, B. (2010). A robust 3d interest points detector based on harris operator. In <em class="EmphasisTypeItalic ">Eurographics workshop on 3D object retrieval</em> (vol. 1, pp. 7–14).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Sipiran%2C%20I.%2C%20%26%20Bustos%2C%20B.%20%282010%29.%20A%20robust%203d%20interest%20points%20detector%20based%20on%20harris%20operator.%20In%20Eurographics%20workshop%20on%203D%20object%20retrieval%20%28vol.%201%2C%20pp.%207%E2%80%9314%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">43.</div><div class="CitationContent" id="CR43">Sivic, J., &amp; Zisserman, A. (2006). Video google: Efficient visual search of videos. <em class="EmphasisTypeItalic ">Toward category-level object recognition</em> (pp. 127–144). Berlin: Springer.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/11957959_7"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Video%20google%3A%20Efficient%20visual%20search%20of%20videos&amp;author=J.%20Sivic&amp;author=A.%20Zisserman&amp;pages=127-144&amp;publication_year=2006"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">44.</div><div class="CitationContent" id="CR44">Sun, J., Ovsjanikov, M., &amp; Guibas, L. (2009). A concise and provably informative multi-scale signature based on heat diffusion. <em class="EmphasisTypeItalic ">Computer Graphics Forum</em>, <em class="EmphasisTypeItalic ">28</em>(5), 1383–1392.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1111/j.1467-8659.2009.01515.x"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20concise%20and%20provably%20informative%20multi-scale%20signature%20based%20on%20heat%20diffusion&amp;author=J.%20Sun&amp;author=M.%20Ovsjanikov&amp;author=L.%20Guibas&amp;journal=Computer%20Graphics%20Forum&amp;volume=28&amp;issue=5&amp;pages=1383-1392&amp;publication_year=2009"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">45.</div><div class="CitationContent" id="CR45">Teichman, A., Levinson, J., &amp; Thrun, S. (2011). Towards 3D object recognition via classification of arbitrary object tracks. In <em class="EmphasisTypeItalic ">IEEE international conference on robotics and automation (ICRA)</em> (pp. 4034–4041).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Teichman%2C%20A.%2C%20Levinson%2C%20J.%2C%20%26%20Thrun%2C%20S.%20%282011%29.%20Towards%203D%20object%20recognition%20via%20classification%20of%20arbitrary%20object%20tracks.%20In%20IEEE%20international%20conference%20on%20robotics%20and%20automation%20%28ICRA%29%20%28pp.%204034%E2%80%934041%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">46.</div><div class="CitationContent" id="CR46">Tombari, F., Salti, S., &amp; Di Stefano, L. (2013). Performance evaluation of 3d keypoint detectors. <em class="EmphasisTypeItalic ">International Journal of Computer Vision</em>, <em class="EmphasisTypeItalic ">102</em>(1–3), 198–220.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s11263-012-0545-4"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Performance%20evaluation%20of%203d%20keypoint%20detectors&amp;author=F.%20Tombari&amp;author=S.%20Salti&amp;author=L.%20Stefano&amp;journal=International%20Journal%20of%20Computer%20Vision&amp;volume=102&amp;issue=1%E2%80%933&amp;pages=198-220&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">47.</div><div class="CitationContent" id="CR47">Toony, Z., Laurendeau, D., &amp; Gagné, C. (2015). PGP2X: Principal geometric primitives parameters extraction. In <em class="EmphasisTypeItalic ">Proceedings of the 10th international conference on computer graphics theory and applications (GRAPP)</em>.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Toony%2C%20Z.%2C%20Laurendeau%2C%20D.%2C%20%26%20Gagn%C3%A9%2C%20C.%20%282015%29.%20PGP2X%3A%20Principal%20geometric%20primitives%20parameters%20extraction.%20In%20Proceedings%20of%20the%2010th%20international%20conference%20on%20computer%20graphics%20theory%20and%20applications%20%28GRAPP%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">48.</div><div class="CitationContent" id="CR48">Toony, Z., Laurendeau, D., Giguére, P., &amp; Gagné, C. (2014). 3D-NCuts: Adapting normalized cuts to 3D triangulated surface segmentation. In <em class="EmphasisTypeItalic ">Proceedings of the 9th international conference on computer graphics theory and applications (GRAPP)</em>.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Toony%2C%20Z.%2C%20Laurendeau%2C%20D.%2C%20Gigu%C3%A9re%2C%20P.%2C%20%26%20Gagn%C3%A9%2C%20C.%20%282014%29.%203D-NCuts%3A%20Adapting%20normalized%20cuts%20to%203D%20triangulated%20surface%20segmentation.%20In%20Proceedings%20of%20the%209th%20international%20conference%20on%20computer%20graphics%20theory%20and%20applications%20%28GRAPP%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">49.</div><div class="CitationContent" id="CR49">Wahl, E., Hillenbrand, U., &amp; Hirzinger, G. (2003). Surflet-pair-relation histograms: A statistical 3D-shape representation for rapid classification. In <em class="EmphasisTypeItalic ">Proceedings of fourth international conference on 3-D digital imaging and modeling (3DIM)</em> (pp. 474–481).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Wahl%2C%20E.%2C%20Hillenbrand%2C%20U.%2C%20%26%20Hirzinger%2C%20G.%20%282003%29.%20Surflet-pair-relation%20histograms%3A%20A%20statistical%203D-shape%20representation%20for%20rapid%20classification.%20In%20Proceedings%20of%20fourth%20international%20conference%20on%203-D%20digital%20imaging%20and%20modeling%20%283DIM%29%20%28pp.%20474%E2%80%93481%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">50.</div><div class="CitationContent" id="CR50">Zaharescu, A., Boyer, E., Varanasi, K., &amp; Horaud, R. (2009). Surface feature detection and description with applications to mesh matching. In <em class="EmphasisTypeItalic ">IEEE conference on computer vision and pattern recognition (CVPR)</em> (pp. 373–380).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Zaharescu%2C%20A.%2C%20Boyer%2C%20E.%2C%20Varanasi%2C%20K.%2C%20%26%20Horaud%2C%20R.%20%282009%29.%20Surface%20feature%20detection%20and%20description%20with%20applications%20to%20mesh%20matching.%20In%20IEEE%20conference%20on%20computer%20vision%20and%20pattern%20recognition%20%28CVPR%29%20%28pp.%20373%E2%80%93380%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">51.</div><div class="CitationContent" id="CR51">Zhang, C., &amp; Chen, T. (2001). Efficient feature extraction for 2D/3D objects in mesh representation. In <em class="EmphasisTypeItalic ">Proceedings of International Conference on Image Processing</em> (vol. 3, pp. 935–938).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=Zhang%2C%20C.%2C%20%26%20Chen%2C%20T.%20%282001%29.%20Efficient%20feature%20extraction%20for%202D%2F3D%20objects%20in%20mesh%20representation.%20In%20Proceedings%20of%20International%20Conference%20on%20Image%20Processing%20%28vol.%203%2C%20pp.%20935%E2%80%93938%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">52.</div><div class="CitationContent" id="CR52">Zhang, J., Cao, J., Liu, X., Wang, J., Liu, J., &amp; Shi, X. (2013). Point cloud normal estimation via low-rank subspace clustering. <em class="EmphasisTypeItalic ">Computers &amp; Graphics</em>, <em class="EmphasisTypeItalic ">37</em>(6), 697–706.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.cag.2013.05.008"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Point%20cloud%20normal%20estimation%20via%20low-rank%20subspace%20clustering&amp;author=J.%20Zhang&amp;author=J.%20Cao&amp;author=X.%20Liu&amp;author=J.%20Wang&amp;author=J.%20Liu&amp;author=X.%20Shi&amp;journal=Computers%20%26%20Graphics&amp;volume=37&amp;issue=6&amp;pages=697-706&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">53.</div><div class="CitationContent" id="CR53">Zhu, K., Wong, Y. S., Loh, H. T., &amp; Lu, W. F. (2012). 3D CAD model retrieval with perturbed laplacian spectra. <em class="EmphasisTypeItalic ">Computers in Industry</em>, <em class="EmphasisTypeItalic ">63</em>(1), 1–11.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.compind.2011.09.003"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener noreferrer" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=3D%20CAD%20model%20retrieval%20with%20perturbed%20laplacian%20spectra&amp;author=K.%20Zhu&amp;author=YS.%20Wong&amp;author=HT.%20Loh&amp;author=WF.%20Lu&amp;journal=Computers%20in%20Industry&amp;volume=63&amp;issue=1&amp;pages=1-11&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></div></li></ol></div></section><section class="Section1 RenderAsSection1"><h2 class="Heading" id="copyrightInformation">Copyright information</h2><div class="ArticleCopyright content"><div class="ArticleCopyright">© 3D Research Center, Kwangwoon University  and Springer-Verlag Berlin Heidelberg 2015</div></div></section><section id="authorsandaffiliations" class="Section1 RenderAsSection1"><h2 class="Heading">Authors and Affiliations</h2><div class="content authors-affiliations u-interface"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Zahra Toony</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul><span class="author-information"><span class="author-information__contact u-icon-before icon--email-before"><a href="mailto:zahra.toony.1@ulaval.ca" title="zahra.toony.1@ulaval.ca" itemprop="email" class="gtm-email-author">Email author</a></span></span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Denis Laurendeau</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Christian Gagné</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul></li></ul><ol class="test-affiliations"><li class="affiliation" data-test="affiliation-1" data-affiliation-highlight="affiliation-1" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">1.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">Computer Vision and System Laboratory, Department of Electrical and Computer Engineering</span><span itemprop="name" class="affiliation__name">Université Laval</span><span itemprop="city" class="affiliation__city">Québec</span><span itemprop="country" class="affiliation__country">Canada</span></span></li></ol></div></section></div>
+                                <aside class="content-type-about" id="AboutThisContent">
+    <h2 class="Heading" id="aboutcontent">About this article</h2>
+    <div class="content bibliographic-information">
+                <div id="crossMark" class="crossmark">
+            <a data-crossmark="10.1007%2Fs13319-015-0074-3" class="gtm-crossmark" target="_blank" rel="noopener noreferrer" href="https://crossmark.crossref.org/dialog/?doi=10.1007%2Fs13319-015-0074-3" title="Verify currency and authenticity via CrossMark">
+                <span class="u-screenreader-only">CrossMark</span>
+                <svg class="CrossMark" id="crossmark-icon" width="57" height="81">
+                    <image width="57" height="81" alt="Verify currency and authenticity via CrossMark" src="/springerlink-static/25538376/images/png/crossmark.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/springerlink-static/25538376/images/svg/crossmark.svg"></image>
+                </svg>
+            </a>
+        </div>
+
+            <div class="crossmark__adjacent">
+                <div class="u-mb-16">
+	<dl class="article-cite">
+		<dt class="test-cite-heading">
+			Cite this article as:
+		</dt>
+		<dd id="citethis-text">Toony, Z., Laurendeau, D. & Gagné, C. 3D Res (2015) 6: 42. https://doi.org/10.1007/s13319-015-0074-3</dd>
+	</dl>
+</div>
+
+                    <ul class="bibliographic-information__list bibliographic-information__list--inline">
+        <li class="bibliographic-information__item">
+            <span class="bibliographic-information__title"><abbr title="Digital Object Identifier">DOI</abbr></span>
+            <span class="bibliographic-information__value u-overflow-wrap" id="doi-url">https://doi.org/10.1007/s13319-015-0074-3</span>
+        </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Publisher Name</span>
+                <span class="bibliographic-information__value" id="publisher-name">3D Display Research Center</span>
+            </li>
+            <li class="bibliographic-information__item ">
+                <span class="bibliographic-information__title">Online ISSN</span>
+                <span class="bibliographic-information__value" id="electronic-issn">2092-6731</span>
+            </li>
+
+
+    </ul>
+
+                <ul class="bibliographic-information__list">
+    <li class="bibliographic-information__item">
+        <a id="about-journal" class="bibliographic-information__misc-links gtm-about-this" title="Visit Springer.com for information about this article&#39;s journal"
+           href="//www.springer.com/journal/13319/about">About this journal</a>
+    </li>
+    <li class="bibliographic-information__item">
+        <a id="reprintsandpermissions-link" class="u-external" target="_blank" rel="noopener noreferrer" href="https://s100.copyright.com/AppDispatchServlet?publisherName&#x3D;Springer&amp;orderBeanReset&#x3D;true&amp;orderSource&#x3D;SpringerLink&amp;author&#x3D;Zahra+Toony&amp;authorEmail&#x3D;zahra.toony.1%40ulaval.ca&amp;issueNum&#x3D;4&amp;contentID&#x3D;10.1007%2Fs13319-015-0074-3&amp;openAccess&#x3D;false&amp;publicationDate&#x3D;2015&amp;startPage&#x3D;42&amp;volumeNum&#x3D;6&amp;title&#x3D;Describing+3D+Geometric+Primitives+Using+the+Gaussian+Sphere+and+the+Gaussian+Accumulator&amp;imprint&#x3D;3D+Research+Center%2C+Kwangwoon+University++and+Springer-Verlag+Berlin+Heidelberg&amp;publication&#x3D;2092-6731&amp;authorAddress&#x3D;Qu%C3%A9bec%2C+QC%2C+Canada" title="Visit RightsLink for information about reusing this article">Reprints and Permissions</a>
+    </li>
+</ul>
+            </div>
+
+
+    </div>
+</aside>
+
+                                <div class="collapsible-section uptodate-recommendations gtm-recommendations">
+    <h2 class="uptodate-recommendations__title collapsible-section__heading gtm-recommendations__title" id="uptodaterecommendations">Personalised recommendations</h2>
+    <div class="collapsible-section__content">
+        <div class="uptodate-recommendations__container">
+             <link rel="uptodate-inline" href="/springerlink-static/25538376/css/recommendations.css"/>
+        </div>
+    </div>
+</div>
+
+
+    <div class="sticky-banner sticky-banner--buybox u-interface u-js-screenreader-only" aria-hidden="true" data-component="SpringerLink.StickyBanner" data-namespace="hasLink">
+        <div class="sticky-banner__container">
+                <div class="citations" data-component="SV.Dropdown" data-namespace="citationsSticky">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Cite</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="citations__content" data-role="button-dropdown__content">
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;refman&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .RIS file" class="gtm-export-citation" data-gtmlabel="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;endnote&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .ENW file" class="gtm-export-citation" data-gtmlabel="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;bibtex&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .BIB file" class="gtm-export-citation" data-gtmlabel="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                <div class="share-this" data-component="SV.Dropdown" data-namespace="shareThisSticky">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Share</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="share-this__content" data-role="button-dropdown__content">
+    <li>
+        <a class="test-shareby-email-link gtm-shareby-email-link" href="mailto:?to&#x3D;&amp;subject&#x3D;Read%20this%20article%20on%20SpringerLink&amp;body&#x3D;Describing%203D%20Geometric%20Primitives%20Using%20the%20Gaussian%20Sphere%20and%20the%20Gaussian%20Accumulator%0A%0Ahttps%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" title="Share this article via email">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><g transform="translate(3 5)"><rect fill="#F9F9F9" width="18" height="14" rx="2"/><path d="M1 2.006v9.988c0 .557.446 1.006.995 1.006h14.01c.549 0 .995-.449.995-1.006v-9.988c0-.557-.446-1.006-.995-1.006h-14.01c-.549 0-.995.449-.995 1.006zm-1 0c0-1.108.893-2.006 1.995-2.006h14.01c1.102 0 1.995.897 1.995 2.006v9.988c0 1.108-.893 2.006-1.995 2.006h-14.01c-1.102 0-1.995-.897-1.995-2.006v-9.988zM9 9l7-4v-1.443l-7 4-7-4v1.443z" fill="#666"/></g></g></svg>
+                <span>Email</span>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a class="test-shareby-facebook-link gtm-shareby-facebook-link" href="https://www.facebook.com/sharer/sharer.php?u&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" target="_blank" rel="noopener noreferrer" title="Share this article via Facebook">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M12.717 19.091h-2.66v-6.274h-1.329v-2.162h1.329v-1.298c0-1.763.75-2.813 2.883-2.813h1.775v2.162h-1.11c-.83 0-.885.302-.885.866l-.004 1.082h2.011l-.235 2.162h-1.775v6.274z" fill="#666"/></g></svg>
+                <span>Facebook</span>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a class="test-shareby-twitter-link gtm-shareby-twitter-link" href="https://twitter.com/intent/tweet?text&#x3D;I%27m%20reading%20this%20on%20%23springerlink&amp;url&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" target="_blank" rel="noopener noreferrer" title="Share this article via Twitter">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M16.651 9.189c.485-.306.858-.792 1.033-1.371-.454.284-.957.49-1.493.601-.428-.482-1.039-.783-1.715-.783-1.298 0-2.349 1.11-2.349 2.478 0 .194.019.384.06.564-1.952-.104-3.684-1.089-4.843-2.59-.202.367-.318.793-.318 1.247 0 .859.415 1.618 1.045 2.063-.385-.013-.748-.126-1.065-.31v.03c0 1.201.809 2.203 1.886 2.43-.198.058-.405.087-.62.087-.151 0-.299-.015-.442-.044.299.984 1.166 1.702 2.195 1.721-.805.665-1.818 1.061-2.919 1.061-.19 0-.377-.011-.561-.034 1.04.703 2.275 1.113 3.602 1.113 4.323 0 6.686-3.777 6.686-7.052l-.006-.321c.459-.35.859-.786 1.173-1.283-.422.197-.875.33-1.349.39z" fill="#666"/></g></svg>
+                <span>Twitter</span>
+            </span>
+        </a>
+    </li>
+        <li>
+            <a class="test-shareby-linkedin-link gtm-shareby-linkedin-link" href="https://www.linkedin.com/shareArticle?mini&#x3D;true&amp;url&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3&amp;title&#x3D;Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator&amp;summary&#x3D;Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an algorithm can segment a complex model into its pri…" target="_blank" rel="noopener noreferrer" title="Share this article via LinkedIn">
+                <span class="share-this__types">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M6.821 10.044h2.126v7.41h-2.126v-7.41zm1.009-.927h-.015c-.77 0-1.269-.566-1.269-1.284 0-.732.514-1.287 1.299-1.287.784 0 1.267.554 1.282 1.285 0 .717-.498 1.286-1.297 1.286zm9.625 8.338h-2.411v-3.835c0-1.004-.377-1.688-1.206-1.688-.634 0-.987.462-1.151.908-.062.159-.052.382-.052.606v4.01h-2.389s.031-6.794 0-7.411h2.389v1.163c.141-.509.904-1.234 2.122-1.234 1.511 0 2.698 1.067 2.698 3.361v4.121z" fill="#666"/></g></svg>
+                    <span>LinkedIn</span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                <div class="sticky-banner__buybox-link sticky-banner__buybox-link--sticky">
+        <a href="#buy" class="gtm-buybox-anchor">
+            Buy options
+        </a>
+    </div>
+
+        </div>
+    </div>
+
+
+                            </div>
+                        </div>
+
+                        <aside class="main-sidebar-right u-interface">
+                            <div data-role="sticky-wrapper">
+                                <div class="main-sidebar-right__content u-composite-layer" data-component="SpringerLink.StickySidebar">
+                                    <div class="article-actions" id="article-actions">
+                                        <h2 class="u-screenreader-only">Actions</h2>
+
+                                            <div id="buy">
+
+
+<style type="text/css">
+    .buybox {
+        margin: 16px 0 0;
+        position: relative;
+    }
+    .buybox {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+    .buybox {
+        zoom: 1;
+    }
+    .buybox:after,
+    .buybox:before {
+        content: '';
+        display: table;
+    }
+    .buybox:after {
+        clear: both;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__header {
+        border: 1px solid #b3b3b3;
+        border-bottom: 0;
+        padding: 8px;
+        position: relative;
+        background-color: #f2f2f2;
+    }
+    .buybox__header .buybox__login {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+        letter-spacing: .017em;
+        display: inline-block;
+        line-height: 1.2;
+        padding: 0;
+    }
+    .buybox__header .buybox__login:before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: perspective(1px) translateY(-50%);
+        transform: perspective(1px) translateY(-50%);
+        content: '\A';
+        width: 34px;
+        height: 34px;
+        left: 10px;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__body {
+        padding: 0;
+        padding-bottom: 16px;
+        position: relative;
+        text-align: center;
+        background-color: #fcfcfc;
+        border: 1px solid #b3b3b3;
+    }
+    /******/
+    .buybox__body .buybox__section {
+        padding: 16px 12px 0 12px;
+        text-align: left;
+    }
+    .buybox__section .buybox__buttons {
+        text-align: center;
+        width: 100%;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__body {
+        background-color: transparent;
+    }
+    .buybox.mycopy__buybox .buybox__section .buybox__buttons {
+        border-top: 0;
+        padding-top: 0;
+    }
+    /******/
+    .buybox__section:nth-child(2) .buybox__buttons {
+        border-top: 1px solid #b3b3b3;
+        padding-top: 20px;
+    }
+    .buybox__buttons .buybox__buy-button {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 6px 12px;
+        max-width: 180px
+    }
+    .buybox__buttons .buybox__price {
+        white-space: nowrap;
+        text-align: center;
+        font-size: larger;
+        padding-top: 6px;
+    }
+    .buybox__section .buybox__meta {
+        letter-spacing: 0;
+        padding-top: 12px;
+    }
+    .buybox__section .buybox__meta:only-of-type {
+        padding-top: 0;
+        position: relative;
+        bottom: 6px;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__section .buybox__meta {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /******/
+    .buybox__meta .buybox__product-title {
+        display: inline;
+        font-weight: bold;
+    }
+    .buybox__meta .buybox__list {
+        line-height: 1.3;
+    }
+    .buybox__meta .buybox__list li {
+        position: relative;
+        padding-left: 1em;
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .buybox__meta .buybox__list li:before {
+        font-size: 1em;
+        content: '\2022';
+        float: left;
+        position: relative;
+        top: .1em;
+        font-family: serif;
+        font-weight: 600;
+        text-align: center;
+        line-height: inherit;
+        color: #666;
+        width: auto;
+        margin-left: -1em;
+    }
+    .buybox__meta .buybox__list li:last-child {
+        margin-bottom: 0;
+    }
+    /********** chapter buybox specific **********/
+    .buybox.chapter__buybox .buybox__section .buybox__meta {
+        border-top: 1px solid #d3d3d3;
+        padding-top: 12px;
+    }
+    .buybox.chapter__buybox .buybox__section .buybox__buy-ebook {
+        margin-bottom: 12px;
+    }
+    /******/
+    /*---------------------------------*/
+    .buybox .buybox__footer {
+        border: 1px solid #b3b3b3;
+        border-top: 0;
+        padding: 8px;
+        position: relative;
+        border-style: dashed;
+        line-height: 1.3;
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (min-width: 460px) and (max-width: 1074px) {
+        .buybox__body .buybox__section {
+            display: inline-block;
+            vertical-align: top;
+            padding: 12px 12px;
+            padding-bottom: 0;
+            text-align: left;
+            width: 48%;
+        }
+        .buybox__body .buybox__section {
+            padding-top: 16px;
+            padding-left: 0;
+        }
+        .buybox__section:nth-of-type(2) .buybox__meta {
+            border-left: 1px solid #d3d3d3;
+            padding-left: 28px;
+        }
+        .buybox__section:nth-of-type(2) .buybox__buttons {
+            border-top: 0;
+            padding-top: 0;
+            padding-left: 16px ;
+        }
+        .buybox__buttons .buybox__buy-button {
+        }
+        /********** article buybox specific **********/
+        .buybox.article__buybox .buybox__section:nth-of-type(2) {
+            margin-top: 16px;
+            padding-top: 0;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta {
+            margin-top: 40px;
+            padding-top: 0;
+            padding-bottom: 45px;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta:only-of-type {
+            margin-top: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__section:first-child {
+            width: 69%;
+            padding-left: 12px ;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            width: 29%;
+        }
+        /********** chapter buybox specific **********/
+        .buybox.chapter__buybox .buybox__body {
+            display: flex;
+            align-items: stretch;
+            padding-left: 12px;
+            padding-top: 12px;
+        }
+        .buybox.chapter__buybox .buybox__section .buybox__meta {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-top: 0;
+            padding-top: 0;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (max-width: 459px) {
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__body {
+            padding-bottom: 5px;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            text-align: center;
+            width: 100%;
+        }
+        .buybox.mycopy__buybox .buybox__buttons {
+            display: inline-block;
+            width: 150px ;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+</style>
+
+<div class="buybox article__buybox" data-webtrekkTrackId="196033507532344" data-webtrekkContentId="SL-article">
+    <div class="buybox__header">
+        <span class="buybox__login">Log in to check access</span>
+    </div>
+    <div class="buybox__body">
+        <div class="buybox__section">
+            <div class="buybox__buttons">
+                <form class="buybox__form" action="https://checkout.springer.com/checkout/add?wt_mc=ThirdParty.SpringerLink.3.EPR653.AbstractPage_Article-new" method="POST">
+
+                        <input type="hidden" name="type" value="article"/>
+
+                        <input type="hidden" name="doi" value="10.1007/s13319-015-0074-3"/>
+
+                        <input type="hidden" name="isxn" value="2092-6731"/>
+
+                        <input type="hidden" name="contenttitle" value="Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator"/>
+
+                        <input type="hidden" name="copyrightyear" value="2015"/>
+
+                        <input type="hidden" name="year" value="2015"/>
+
+                        <input type="hidden" name="authors" value="Zahra Toony, Denis Laurendeau, Christian Gagné"/>
+
+                        <input type="hidden" name="title" value="3D Research"/>
+
+                        <input type="hidden" name="mac" value="fff05b59ced852197bd9bfa5a84eca4f"/>
+
+                        <input type="hidden" name="returnurl" value="http://link.springer.com/article/10.1007/s13319-015-0074-3"/>
+
+                    <button
+                        class="buybox__buy-button c-button c-button--blue"
+                        data-product-id="10.1007/s13319-015-0074-3_Describing 3D Geometric Primitives"
+                        data-tracking-category="ppv"
+                        data-eCommerceParam_11="article-page"
+                        data-gtm="buybox__buy-button">
+                        <span class="buybox__buy" data-gtm="buybox__buy-button">Buy (PDF)</span>
+                    </button>
+                    <div class="buybox__price" data-gtm="buybox__buy-button">
+                        EUR&nbsp;42.99
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="buybox__section">
+
+            <div class="buybox__meta">
+                <ul class="buybox__list">
+                    <li>Unlimited access to the full article</li>
+                    <li>Instant download</li>
+                    <li>Include local sales tax if applicable</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="buybox__footer">
+        <a class="js-buybox__inst-sub-link" data-gtm="buybox__inst-sub-link" href="http://www.springer.com/gp/shop/subscriptions?wt_mc=ThirdParty.SpringerLink.3.EPR653.ArticlePage_Institutional-customers">
+            Learn about institutional subscriptions</a>
+    </div>
+</div>
+
+<script>
+(function () {
+    var forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+            callback.call(scope, i, array[i]);
+        }
+    };
+
+    var trackDomain = 'springergmbh01.webtrekk.net';
+    var domain = 'link.springer.com';
+    var loadEventSent = false;
+
+    var buyboxRoot = document.getElementsByClassName('buybox')[0];
+    var webtrekkTrackId = buyboxRoot.getAttribute('data-webtrekkTrackId');
+    var webtrekkContentId = buyboxRoot.getAttribute('data-webtrekkContentId');
+
+    function SubscriptionTrack(webtrekkTrackId) {
+        if (!webtrekkTrackId) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: 'springer_com.buybox',
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function Track(product, webtrekkTrackId, eCommerceParam_11, action) {
+        if (!product) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: webtrekkContentId,
+            product: product.id,
+            productStatus: action,
+            productCategory: {
+                1: product.trackingCategory
+            },
+            customEcommerceParameter: {
+                9: domain,
+                11: eCommerceParam_11
+            },
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function trackAddToCart(trackingConfig) {
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo();
+    }
+
+    function trackOnLoad(trackingConfig) {
+        if (loadEventSent) return;
+        loadEventSent = true;
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo();
+    }
+
+    function trackSubscription(trackingConfig) {
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo({linkId: 'inst. subscription info'});
+    }
+
+    function getBusinessPartnerIds() {
+        var businessPartnerIDs = [];
+        try {
+            var ids = window.dataLayer[0]["user"]["license"]["businessPartnerID"];
+            if(ids && ids.length) businessPartnerIDs = ids;
+        } catch(e) {}
+        return businessPartnerIDs.join(";");
+    }
+
+    var bindClickLinkHandle = function (link) {
+        if (!link) return;
+
+        link.addEventListener('click', function (event) {
+            trackSubscription(SubscriptionTrack(webtrekkTrackId));
+        });
+    };
+
+    var bindLoadButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        window.addEventListener('load', function (event) {
+            trackOnLoad(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'view'));
+        });
+    };
+
+    var bindClickButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        button.addEventListener('click', function (event) {
+            trackAddToCart(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'add'));
+        });
+    };
+
+    var buyButtons = document.getElementsByClassName('buybox__buy-button');
+    forEach(buyButtons, function (index, button) {
+        bindLoadButtonHandle(button);
+        bindClickButtonHandle(button);
+    });
+
+    var sublinks = document.getElementsByClassName('js-buybox__inst-sub-link');
+    forEach(sublinks, function (index, link) {
+        bindClickLinkHandle(link);
+    });
+})();
+</script>
+
+                                            </div>
+
+                                        <div class="u-js-hide u-js-show-two-col">
+
+
+
+
+                                                <div class="citations" data-component="SV.Dropdown" data-namespace="citations">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Cite</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="citations__content" data-role="button-dropdown__content">
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;refman&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .RIS file" class="gtm-export-citation" data-gtmlabel="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;endnote&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .ENW file" class="gtm-export-citation" data-gtmlabel="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/s13319-015-0074-3?format&#x3D;bibtex&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .BIB file" class="gtm-export-citation" data-gtmlabel="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"/></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                                                <div class="share-this" data-component="SV.Dropdown" data-namespace="shareThis">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Share</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="share-this__content" data-role="button-dropdown__content">
+    <li>
+        <a class="test-shareby-email-link gtm-shareby-email-link" href="mailto:?to&#x3D;&amp;subject&#x3D;Read%20this%20article%20on%20SpringerLink&amp;body&#x3D;Describing%203D%20Geometric%20Primitives%20Using%20the%20Gaussian%20Sphere%20and%20the%20Gaussian%20Accumulator%0A%0Ahttps%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" title="Share this article via email">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><g transform="translate(3 5)"><rect fill="#F9F9F9" width="18" height="14" rx="2"/><path d="M1 2.006v9.988c0 .557.446 1.006.995 1.006h14.01c.549 0 .995-.449.995-1.006v-9.988c0-.557-.446-1.006-.995-1.006h-14.01c-.549 0-.995.449-.995 1.006zm-1 0c0-1.108.893-2.006 1.995-2.006h14.01c1.102 0 1.995.897 1.995 2.006v9.988c0 1.108-.893 2.006-1.995 2.006h-14.01c-1.102 0-1.995-.897-1.995-2.006v-9.988zM9 9l7-4v-1.443l-7 4-7-4v1.443z" fill="#666"/></g></g></svg>
+                <span>Email</span>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a class="test-shareby-facebook-link gtm-shareby-facebook-link" href="https://www.facebook.com/sharer/sharer.php?u&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" target="_blank" rel="noopener noreferrer" title="Share this article via Facebook">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M12.717 19.091h-2.66v-6.274h-1.329v-2.162h1.329v-1.298c0-1.763.75-2.813 2.883-2.813h1.775v2.162h-1.11c-.83 0-.885.302-.885.866l-.004 1.082h2.011l-.235 2.162h-1.775v6.274z" fill="#666"/></g></svg>
+                <span>Facebook</span>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a class="test-shareby-twitter-link gtm-shareby-twitter-link" href="https://twitter.com/intent/tweet?text&#x3D;I%27m%20reading%20this%20on%20%23springerlink&amp;url&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3" target="_blank" rel="noopener noreferrer" title="Share this article via Twitter">
+            <span class="share-this__types">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M16.651 9.189c.485-.306.858-.792 1.033-1.371-.454.284-.957.49-1.493.601-.428-.482-1.039-.783-1.715-.783-1.298 0-2.349 1.11-2.349 2.478 0 .194.019.384.06.564-1.952-.104-3.684-1.089-4.843-2.59-.202.367-.318.793-.318 1.247 0 .859.415 1.618 1.045 2.063-.385-.013-.748-.126-1.065-.31v.03c0 1.201.809 2.203 1.886 2.43-.198.058-.405.087-.62.087-.151 0-.299-.015-.442-.044.299.984 1.166 1.702 2.195 1.721-.805.665-1.818 1.061-2.919 1.061-.19 0-.377-.011-.561-.034 1.04.703 2.275 1.113 3.602 1.113 4.323 0 6.686-3.777 6.686-7.052l-.006-.321c.459-.35.859-.786 1.173-1.283-.422.197-.875.33-1.349.39z" fill="#666"/></g></svg>
+                <span>Twitter</span>
+            </span>
+        </a>
+    </li>
+        <li>
+            <a class="test-shareby-linkedin-link gtm-shareby-linkedin-link" href="https://www.linkedin.com/shareArticle?mini&#x3D;true&amp;url&#x3D;https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13319-015-0074-3&amp;title&#x3D;Describing 3D Geometric Primitives Using the Gaussian Sphere and the Gaussian Accumulator&amp;summary&#x3D;Most complex object models are composed of basic parts or primitives. Being able to decompose a complex 3D model into such basic primitives is an important step in reverse engineering.
+Even when an algorithm can segment a complex model into its pri…" target="_blank" rel="noopener noreferrer" title="Share this article via LinkedIn">
+                <span class="share-this__types">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path fill-opacity="0" fill="#fff" d="M0 0h24v24h-24z"/><path d="M6.821 10.044h2.126v7.41h-2.126v-7.41zm1.009-.927h-.015c-.77 0-1.269-.566-1.269-1.284 0-.732.514-1.287 1.299-1.287.784 0 1.267.554 1.282 1.285 0 .717-.498 1.286-1.297 1.286zm9.625 8.338h-2.411v-3.835c0-1.004-.377-1.688-1.206-1.688-.634 0-.987.462-1.151.908-.062.159-.052.382-.052.606v4.01h-2.389s.031-6.794 0-7.411h2.389v1.163c.141-.509.904-1.234 2.122-1.234 1.511 0 2.698 1.067 2.698 3.361v4.121z" fill="#666"/></g></svg>
+                    <span>LinkedIn</span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                        <div class="skyscraper-ad u-hide" data-component="SpringerLink.GoogleAds" data-namespace="skyscraper"></div>
+
+                            </div>
+                        </aside>
+                    </div>
+                </article>
+            </main>
+
+            <section class="banner banner--cookies-policy u-js-hide" data-component="SpringerLink.CookiePolicy">
+    <div class="banner__content u-interface">
+        <h2 class="u-screenreader-only">Cookies</h2>
+        <span class="banner__cookie-text">We use cookies to improve your experience with our site.</span>
+        <a class="banner__link banner__link--cookie" href="/termsandconditions#cookies">More information</a>
+
+        <form class="banner__form" action="/acceptcookies" method="POST">
+            <button class="u-link-like banner__right-ui">Accept</button>
+        </form>
+    </div>
+</section>
+
+                <footer class="footer u-interface">
+        <div class="footer__aside-wrapper">
+            <div class="footer__content">
+                <div class="footer__aside">
+                    <p class="footer__strapline">Over 10 million scientific documents at your fingertips</p>
+                                <div class="footer__edition" data-component="SpringerLink.EditionSwitcher">
+                                    <h3 class="u-hide" data-role="button-dropdown__title" data-btn-text="Switch between Academic &#38; Corporate Edition">Switch Edition</h3>
+                                    <ul data-role="button-dropdown__content">
+                                        <li class="selected"><a href="/siteEdition/link" id="siteedition-academic-link">Academic Edition</a></li>
+                                        <li><a href="/siteEdition/rd" id="siteedition-corporate-link">Corporate Edition</a></li>
+                                    </ul>
+                                </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__content">
+            <ul class="footer__nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/impressum">Impressum</a>
+                </li>
+                <li>
+                    <a href="/termsandconditions">Legal Information</a>
+                </li>
+                <li>
+                    <a href="/accessibility" class="gtm-footer-accessibility">Accessibility</a>
+                </li>
+                <li>
+                    <a id="contactus-footer-link" href="/contactus">Contact Us</a>
+                </li>
+            </ul>
+            <a class="parent-logo"
+               target="_blank" rel="noreferrer noopener"
+               href="//www.springernature.com"
+               title="Go to Springer Nature">
+                <span class="u-screenreader-only">Springer Nature</span>
+                <svg width="125" height="12">
+                    <image width="125" height="12" alt="Springer Nature logo"
+                           src="/springerlink-static/25538376/images/png/springernature.png"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xlink:href="/springerlink-static/25538376/images/svg/springernature.svg">
+                    </image>
+                </svg>
+            </a>
+
+            <p class="footer__copyright">&copy; 2017 Springer International Publishing AG. Part of <a target="_blank" rel="noreferrer noopener" href="//www.springernature.com">Springer Nature</a>.</p>
+
+                <p class="footer__user-access-info">
+                    <span>Not logged in</span>
+                    <span>Not affiliated</span>
+                    <span>85.222.48.20</span>
+                </p>
+        </div>
+    </footer>
+
+        </div>
+            <script type="text/javascript">
+        (function() {
+            var linkEl = document.querySelector('.js-ctm');
+            if (window.matchMedia && window.matchMedia(linkEl.media)) {
+                var scriptMathJax = document.createElement('script');
+                scriptMathJax.async = true;
+                scriptMathJax.src = '/springerlink-static/25538376/js/mathJax.js';
+                var s0 = document.getElementsByTagName('script')[0];
+                s0.parentNode.insertBefore(scriptMathJax, s0);
+            }
+        })();
+    </script>
+
+<script type="text/javascript">
+    (function() {
+        var linkEl = document.querySelector('.js-ctm');
+        if (window.matchMedia && window.matchMedia(linkEl.media)) {
+            (function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement);
+            window.SpringerLink = window.SpringerLink || {};
+            window.SpringerLink.staticLocation = '/springerlink-static/25538376';
+            var scriptJquery = document.createElement('script');
+            var scriptMain = document.createElement('script');
+            scriptJquery.async = false;
+            scriptJquery.src = window.SpringerLink.staticLocation + '/js/jquery-3.2.1.min.js';
+            scriptMain.async = false;
+            scriptMain.src =  window.SpringerLink.staticLocation + '/js/main.js';
+            document.body.appendChild(scriptJquery);
+            document.body.appendChild(scriptMain);
+        }
+    })();
+</script>
+
+<script type="text/javascript">
+    window.onload = function() {
+    var linkEl = document.querySelector('.js-ctm');
+
+
+    function viewport() {
+        if (document.documentElement.clientWidth < 620) {
+            size = 'small';
+        }
+        else if(document.documentElement.clientWidth < 1075 ) {
+            size = 'medium';
+        }
+        else {
+            size = 'wide';
+        }
+        return size;
+    }
+
+    function reportForMouseEvent(linkCssSelector, nolardUrl, experiment, abgroup) {
+        var counter = 0;
+        $('body').delegate(linkCssSelector, 'click', function() {
+            if(counter == 0) {
+                reportConversion(nolardUrl, experiment, abgroup);
+                counter++;
+            }
+        });
+    }
+
+    function reportParticipation(nolardUrl, experiment, abgroup) {
+        $.ajax({ url: nolardUrl + '/participate/' + experiment + '/' + abgroup });
+    }
+
+    function reportConversion(nolardUrl, experiment, abgroup) {
+        $.ajax({ url: nolardUrl + '/convert/' + experiment + '/' + abgroup });
+    }
+    };
+</script>
+
+<script class="kxct" data-id="KDqyaFZ_" data-timing="async" data-version="3.0" type="text/javascript">
+ window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+ (function(){
+   var k=document.createElement('script');k.type='text/javascript';k.async=true;
+   k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/KDqyaFZ_.js';
+   var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+ }());
+</script>
+
+<script>
+    window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+    (function(){
+        function retrieve(n){
+            var m, k='kx'+n;
+            if (window.localStorage) {
+                return window.localStorage[k] || "";
+            } else if (navigator.cookieEnabled) {
+                m = document.cookie.match(k+'=([^;]*)');
+                return (m && unescape(m[1])) || "";
+            } else {
+                return '';
+            }
+        }
+        Krux.user = retrieve('user');
+        Krux.segments = retrieve('segs') && retrieve('segs').split(',') || [];
+    })();
+</script>
+
+    <script type="text/javascript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                    '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+    <script type="text/javascript" id="googletag-push">
+
+            var adSlot = '270604982/springerlink/13319/article';
+
+
+        var definedSlots = [
+                {slot: [728, 90], containerName: 'doubleclick-leaderboard-ad'},
+                {slot: [160, 600], containerName: 'doubleclick-ad'},
+        ];
+
+        googletag.cmd.push(function() {
+                googletag.pubads().setTargeting("doi","10.1007-s13319-015-0074-3");
+                googletag.pubads().setTargeting("kwrd",["Shape_description","Principal_primitives","Gaussian_sphere","Gaussian_accumulator"]);
+                googletag.pubads().setTargeting("pmc",["T","T24051","I22005","P31060"]);
+                googletag.pubads().setTargeting("BPID",["1"]);
+                googletag.pubads().setTargeting("edition","academic");
+                googletag.pubads().setTargeting("sucode","Engineering");
+                googletag.pubads().setTargeting("eissn","2092-6731");
+                googletag.pubads().setTargeting("ksg",Krux.segments);
+                googletag.pubads().setTargeting("kuid",Krux.uid);
+                googletag.pubads().setTargeting("logged","N");
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().enableAsyncRendering();
+            googletag.enableServices();
+        });
+    </script>
+
+
+        <span id="chat-widget" class="u-hide"></span>
+
+    </body>
+</html>
