@@ -1,22 +1,22 @@
 # HTML-Tag-Extractor-with-DIFF
 Example of build Tag tree for full website (based on Springer test website) in file springerBuiltTree.txt
 
-          ┌meta
-     ┌head┤
-     │    ├script
-     │    ├title
-     │    ├meta
-     │    └meta
- html┤
-     │    ┌script
-     │    ├script
-     │    ├span
-     │    ├noscript┐
-     │    │        └iframe
-     │    ├nav┐
-     │    │   └a
-     └body┤
-          │   ┌div
+                    ┌meta
+               ┌head┤
+               │    ├script
+               │    ├title
+               │    ├meta
+               │    └meta
+           html┤
+               │    ┌script
+               │    ├script
+               │    ├span
+               │    ├noscript┐
+               │    │        └iframe
+               │    ├nav┐
+               │    │   └a
+               └body┤
+                    │   ┌div
 
 [...] (fragment above [main file is more than 1000 lines)
 
